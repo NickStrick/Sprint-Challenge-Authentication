@@ -19,7 +19,15 @@ function register(req, res) {
   db('users')
     .insert(creds)
     .then(ids => {
-      res.status(201).json({ ids });
+      db('users')
+        .where({
+          username: creds.username
+        })
+        .first()
+        .then(user => {
+          const token = generateToken(user);
+          res.status(201).json({ ids, user, token });
+        })
     })
     .catch(err => res.status(500).json(err))
 }
