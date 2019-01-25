@@ -33,8 +33,17 @@ Demonstrate your understanding of this week's concepts by answering the followin
 to store information about the users current authentication and authorization using cookies.
 
 1. What does bcrypt do to help us store passwords in a secure manner.
+
+it creates a hash for our passwords, and a hash is a one way converstion, so it cant be changed back into a password.
+it also compares our hash to other passwords to safely log in.
+
 1. What does bcrypt do to slow down attackers?
+
+it hashes the password a certin amount of times, and every iteration makes it take much longer to guess the hash.
+
 1. What are the three parts of the JSON Web Token?
+
+header, payload, signature.
 
 ## Project Set Up
 
